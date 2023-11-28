@@ -1,0 +1,20 @@
+
+
+.wrapper {
+  display: flex;
+}
+
+.sidebar {
+  flex: 0 0 280px;
+}
+
+
+
+.page {
+  flex: 1;
+}
+
+.content-inner {
+  padding: 20px;
+  border: 1px solid #ddd;
+}
