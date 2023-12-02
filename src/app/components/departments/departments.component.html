@@ -1,0 +1,114 @@
+<div class="p-3">
+  <nav>
+    <ol class="cd-breadcrumb">
+      <li><a>Home</a></li>
+      <li class="current"><em>Departments</em></li>
+    </ol>
+  </nav>
+  <div class="card">
+    <div class="card-header">
+      <h3 class="card-title">Departments List</h3>
+      <div class="card-options">
+        <form>
+          <div class="input-group">
+            <input type="text" class="form-control form-control-md" placeholder="Please Enter Name..." name="s"
+              [(ngModel)]="searchDepartmentValue" />
+          </div>
+        </form>
+        <button type="button" class="btn btn-primary btn-sm ms-2 " (click)="showcreateDepartmentTemplate()">Add</button>
+
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-striped table-vcenter mb-0 text-nowrap">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <ng-container *ngIf="(departments | searchByName: searchDepartmentValue).length > 0; else noData">
+              <tr *ngFor="let department of departments | searchByName: searchDepartmentValue; let i = index">
+                <td class="w40">#{{ i + 1 }}</td>
+                <td>
+                  <h6 class="mb-0">{{ department.Name }}</h6>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-icon" title="Edit"
+                    (click)="showeditDepartmentTemplate(department)"><i class="fa fa-edit"></i></button>
+                  <button type="button" class="btn btn-icon js-sweetalert" title="Delete" data-type="confirm"
+                    (click)="removeDepartment(department.ID)"><i class="fa fa-trash-o text-danger"></i></button>
+                </td>
+              </tr>
+            </ng-container>
+            <ng-template #noData>
+              <tr>
+                <td colspan="3" class="text-center">
+                  No data found.
+                </td>
+              </tr>
+            </ng-template>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<ng-template #createDepartmentTemplate>
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title">Relocate Employee</h5>
+      <i class="uil uil-times c-g600 font-16 pointer ms-auto" (click)="modalRef.hide()"></i>
+    </div>
+
+    <div class="modal-body">
+      <form [formGroup]="createDepartmentForm">
+        <fieldset class="form-group mb-3">
+          <label class="d-flex align-items-center">Name</label>
+          <input type="text" class="form-control" placeholder="Name" formControlName="Name">
+          <div *ngIf="shouldDisplayValidation(createDepartmentForm.get('Name')!)" class="text-danger mt-2">
+            <div *ngFor="let message of getValidationMessage(createDepartmentForm,'Name')">{{ message }}</div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+
+
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary btn-md me-auto" (click)="modalRef.hide()">Cancel</button>
+      <button type="button" class="btn btn-primary btn-md" (click)="createDepartment()">Add</button>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #editDepartmentTemplate>
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title">Relocate Employee</h5>
+      <i class="uil uil-times c-g600 font-16 pointer ms-auto" (click)="modalRef.hide()"></i>
+    </div>
+
+    <div class="modal-body">
+      <form [formGroup]="editDepartmentForm">
+        <fieldset class="form-group mb-3">
+          <label class="d-flex align-items-center">Name</label>
+          <input type="text" class="form-control" placeholder="Name" formControlName="Name">
+          <div *ngIf="shouldDisplayValidation(editDepartmentForm.get('Name')!)" class="text-danger mt-2">
+            <div *ngFor="let message of getValidationMessage(editDepartmentForm,'Name')">{{ message }}</div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary btn-md me-auto" (click)="modalRef.hide()">Cancel</button>
+      <button type="button" class="btn btn-primary btn-md" (click)="editDepartment()">Update</button>
+    </div>
+  </div>
+</ng-template>

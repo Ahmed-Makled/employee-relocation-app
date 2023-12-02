@@ -1,0 +1,41 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-4">
+      <div class="card-group mb-0">
+        <div class="card h-100 p-4">
+          <div class="card-body">
+            <h1>Login</h1>
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+              <fieldset class="form-group mb-3">
+                <label class="d-flex align-items-center">Username</label>
+                <input type="text" class="form-control" placeholder="Username" formControlName="Username">
+
+                <div *ngIf="shouldDisplayValidation(loginForm.get('Username')!)" class="text-danger mt-2">
+                  <div *ngFor="let message of getValidationMessage('Username')">{{ message }}</div>
+                </div>
+
+              </fieldset>
+
+              <fieldset class="form-group mb-3">
+                <label class="d-flex align-items-center">Password</label>
+                <input type="password" class="form-control" placeholder="Password" formControlName="Password">
+                <div *ngIf="shouldDisplayValidation(loginForm.get('Password')!)" class="text-danger mt-2">
+                  <div *ngFor="let message of getValidationMessage('Password')">{{ message }}</div>
+                </div>
+              </fieldset>
+
+              <div class="row">
+                <div class="col-6">
+                  <button type="submit" class="btn btn-primary px-4 m-auto"  >Login</button>
+                </div>
+              </div>
+            </form>
+
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

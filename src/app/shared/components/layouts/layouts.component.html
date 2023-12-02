@@ -1,13 +1,12 @@
+<!-- app.component.html -->
 <div class="wrapper">
-  <div class="navbar-area">
-
+  <div class="burger-menu menu-btn-md-none m-2" (click)="toggleSidebar()">
+    <i class="fa fa-bars" aria-hidden="true"></i>
   </div>
-  <div class="sidebar">
+  <div class="sidebar" [ngClass]="{'show-sidebar': isSidebarVisible}">
     <app-side-menu></app-side-menu>
-    
   </div>
   <div class="page">
     <router-outlet></router-outlet>
-
   </div>
 </div>

@@ -11,5 +11,9 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './layouts.component.css'
 })
 export class LayoutsComponent {
+ isSidebarVisible = false;
 
+  toggleSidebar() {
+    this.isSidebarVisible = !this.isSidebarVisible;
+  }
 }
