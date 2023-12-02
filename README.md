@@ -28,7 +28,7 @@ Clone the repository and install the dependencies:
 
 ```bash
 git clone https://github.com/Ahmed-Makled/employee-relocation-app
-cd your-repo
+cd employee-relocation-app
 npm install
 ```
 
