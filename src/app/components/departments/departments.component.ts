@@ -6,7 +6,7 @@ import { ToastrService } from 'ngx-toastr';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
   import { DepartmentsService } from '../../core/services/department.service';
 import { CreateDepartentModel, Department } from '../../core/models/department.model';
-import { SearchByNamePipe } from '../../core/pipes/search-empolyee.pipe';
+import { SearchByNamePipe } from '../../core/pipes/search.pipe';
 import { SharedModule } from '../../shared/shared.module';
 import { FormService } from '../../core/services/form.service';
 

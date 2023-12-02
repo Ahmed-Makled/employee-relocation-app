@@ -1,27 +1,96 @@
-# EmployeeRelocationApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.3.
 
-## Development server
+# Employee Relocation App
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Description
 
-## Code scaffolding
+This project provides functionality for user authentication, CRUD operations for departments, and managing employees, including the ability to relocate them.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Table of Contents
 
-## Build
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Features](#features)
+- [Project Structure](#project-structure)
+- [Login Information](#login-information)
+- [License](#license)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Prerequisites
 
-## Running unit tests
+Ensure you have the following installed:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Node.js (>= 20)
+- Angular (= 17)
 
-## Running end-to-end tests
+## Installation
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Clone the repository and install the dependencies:
 
-## Further help
+```bash
+git clone https://github.com/Ahmed-Makled/employee-relocation-app
+cd your-repo
+npm install
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Additional Steps
+
+If required, perform any additional setup steps, such as configuring a database or environment variables.
+
+# Features
+
+1. **Login:**
+   - Users can authenticate themselves.
+
+2. **CRUD Departments:**
+   - Create, Read, Update, and Delete operations for departments.
+
+3. **Employee Management:**
+   - Display a list of employees.
+   - Relocate employees to different departments.
+
+# Project Structure
+
+## src
+
+The `src` directory contains the source code of the Angular application.
+
+- **app:**
+  - *components:* Angular components for different features.
+    - *auth:* Components related to user authentication.
+    - *departments:* Components for CRUD operations on departments.
+    - *employees:* Components for employee management.
+  - *core:*
+    - *guards:* Authentication guard.
+    - *models:* Data models for authentication, departments, and employees.
+    - *pipes:* Custom pipes (e.g., search-by-name).
+    - *services:* Services for API, authentication, department, employee, and form handling.
+  - *shared:*
+    - *components:* Reusable layout and sidemenu components.
+
+- **assets:**
+  - *css:* Styles for Toastr notifications.
+  - *data:* JSON files for employees and departments.
+  - *images:* Project images.
+
+## Running the Development Server
+
+To run the development server, use the following command:
+
+```bash
+ng s
+```
+
+Open your browser and navigate to http://localhost:4200.
+
+Explore the various features such as authentication, CRUD operations for departments, and managing employees.
+
+# Login Information
+
+
+- **Username:** tie
+- **Password:** tie
+
+# License
+
+Specify the license under which the project is distributed.
+

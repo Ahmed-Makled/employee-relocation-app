@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { SharedModule } from '../../shared/shared.module';
-import { SearchByNamePipe } from '../../core/pipes/search-empolyee.pipe';
+import { SearchByNamePipe } from '../../core/pipes/search.pipe';
 import { Department } from '../../core/models/department.model';
 import { DepartmentsService } from '../../core/services/department.service';
 import { RouterLink } from '@angular/router';
